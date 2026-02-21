@@ -81,3 +81,9 @@ def menu():
             break
         else:
             print("❌ Pilihan tidak valid!")
+            
+# ===============================
+# MAIN
+# ===============================
+if __name__ == "__main__":
+    menu()
