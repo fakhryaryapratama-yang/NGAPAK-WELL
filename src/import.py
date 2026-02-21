@@ -7,7 +7,7 @@ from reportlab.pdfgen import canvas
 def get_tanggal_sekarang():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-DB_FILE = "kas_takmir.db"
+DB_FILE = "kas.db"
 FILE_PDF = "laporan_kas_takmir.pdf"
 
 # ===============================
