@@ -45,3 +45,15 @@ if not rows:
 
     c.save()
     print(f"\n📄 Laporan PDF berhasil dibuat: {FILE_PDF}")
+    
+# ===============================
+# MENU
+# ===============================   
+def menu():
+    init_db()
+    petugas = get_petugas()
+
+    print("======================================")
+    print(" SISTEM PENGELOLAAN KAS TAKMIR ")
+    print("======================================")
+    print(f"Petugas : {petugas}")
