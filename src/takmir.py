@@ -57,3 +57,13 @@ def menu():
     print(" SISTEM PENGELOLAAN KAS TAKMIR ")
     print("======================================")
     print(f"Petugas : {petugas}")
+    
+    while True:
+        print("\nMenu:")
+        print("1. Input Kas Masuk")
+        print("2. Input Kas Keluar")
+        print("3. Lihat Laporan Kas")
+        print("4. Export Laporan ke PDF")
+        print("5. Keluar")
+
+        pilih = input("Pilih menu (1-5): ")
