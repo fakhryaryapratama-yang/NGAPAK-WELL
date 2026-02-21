@@ -43,3 +43,12 @@ def init_db():
     """)
     conn.commit()
     conn.close()
+
+# ===============================
+# AMBIL USERNAME OS
+# ===============================
+def get_petugas():
+    try:
+        return os.getlogin()
+    except:
+        return os.environ.get("USERNAME") or os.environ.get("USER") or "Unknown"
