@@ -4,6 +4,9 @@ from datetime import datetime
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 
+def get_tanggal_sekarang():
+    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
 DB_FILE = "kas_takmir.db"
 FILE_PDF = "laporan_kas_takmir.pdf"
 
