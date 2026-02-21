@@ -62,6 +62,8 @@ def init_db():
 # ===============================
 def get_petugas():
     try:
-        return os.getlogin()
+        user = os.getlogin()
     except:
-        return os.environ.get("USERNAME") or os.environ.get("USER") or "Unknown"
+        user = os.environ.get("USERNAME") or os.environ.get("USER")
+    
+    return user.strip() if user else "Unknown"
