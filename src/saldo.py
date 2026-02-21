@@ -45,3 +45,17 @@ def laporan():
 
     print("\n========== LAPORAN KAS TAKMIR ==========")
 
+    if not rows:
+        print("Belum ada transaksi.")
+        return
+
+    for t in rows:
+        print(
+            f"{t[0]} | "
+            f"{t[1].upper():6} | "
+            f"{format_rupiah(t[2]):>15} | "
+            f"{t[3]} | {t[4]}"
+        )
+
+    print("---------------------------------------")
+    print(f"Saldo Akhir : {format_rupiah(hitung_saldo())}")
