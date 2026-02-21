@@ -35,3 +35,13 @@ def input_kas(jenis):
     print("\n✅ Transaksi berhasil dicatat")
     print(f"Saldo saat ini : {format_rupiah(hitung_saldo())}")
 
+def laporan():
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute("SELECT tanggal, jenis, jumlah, keterangan, petugas FROM kas")
+    rows = cur.fetchall()
+    conn.close()
+
+    print("\n========== LAPORAN KAS TAKMIR ==========")
+
