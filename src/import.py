@@ -42,6 +42,8 @@ def get_connection():
 def init_db():
     conn = get_connection()
     cur = conn.cursor()
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_tanggal ON kas(tanggal)")
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_jenis ON kas(jenis)")
     cur.execute("""
         CREATE TABLE IF NOT EXISTS kas (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
