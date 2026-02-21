@@ -22,7 +22,13 @@ def input_rupiah(prompt):
                 print("❌ Input tidak boleh kosong!")
                 continue
 
-            nilai_bersih = nilai.replace(".", "").replace(",", "")
+            nilai_bersih = (
+                nilai.replace("Rp", "")
+                    .replace("rp", "")
+                    .replace(".", "")
+                    .replace(",", "")
+                    .strip()
+            )
             return int(nilai_bersih)
         except ValueError:
             print("❌ Masukkan angka yang benar! Contoh: 100.000")
