@@ -15,3 +15,11 @@ if not rows:
     c = canvas.Canvas(FILE_PDF, pagesize=A4)
     width, height = A4
     y = height - 50
+    
+    c.setFont("Helvetica-Bold", 14)
+    c.drawString(50, y, "LAPORAN KAS TAKMIR")
+    y -= 30
+
+    c.setFont("Helvetica", 10)
+    c.drawString(50, y, f"Tanggal Cetak : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    y -= 25
