@@ -1,3 +1,6 @@
+# ===============================
+# HITUNG SALDO
+# ===============================
 def hitung_saldo():
     conn = get_connection()
     cur = conn.cursor()
@@ -10,6 +13,9 @@ def hitung_saldo():
     conn.close()
     return saldo if saldo else 0
 
+# ===============================
+# INPUT KAS
+# ===============================
 def input_kas(jenis):
     conn = get_connection()
     cur = conn.cursor()
@@ -35,6 +41,9 @@ def input_kas(jenis):
     print("\n✅ Transaksi berhasil dicatat")
     print(f"Saldo saat ini : {format_rupiah(hitung_saldo())}")
 
+# ===============================
+# LAPORAN TERMINAL
+# ===============================
 def laporan():
     conn = get_connection()
     cur = conn.cursor()

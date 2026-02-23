@@ -1,0 +1,4 @@
+app.py = adalah hasil penyatuan dari 3 mentahan program.
+import.py = adalah tahapan awal yang berfungsi sebagai utils, format rupiah, database, dan username OS.
+saldo.py = adalah bagian yang berfungsi untuk hitung saldo, memasukan kas/saldo, dan memberikan output laporan di terminal.
+takmir.py = adalah bagian yang berfungsi sebagai sistem yang menjalankan agar bisa di export ke PDF dan penampilan menu.
