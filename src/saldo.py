@@ -15,7 +15,7 @@ def hitung_saldo():
 
 # ===============================
 # INPUT KAS
-# ===============================
+# ==============================
 def input_kas(jenis):
     conn = get_connection()
     cur = conn.cursor()
