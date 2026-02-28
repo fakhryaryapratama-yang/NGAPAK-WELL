@@ -27,3 +27,27 @@
 </div>
 
 ###
+# 📌 Sistem Pengelolaan Kas Takmir (CLI)
+
+Aplikasi berbasis Python (Command Line Interface) untuk mencatat dan mengelola kas takmir masjid.
+
+---
+# 📦 Install Dependency
+```bash
+# Windows
+pip install reportlab
+```
+```bash
+# Linux/Mac
+pip3 install reportlab
+```
+
+## 🚀 Cara Menjalankan Aplikasi
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/USERNAME/NAMA-REPO.git
+cd NGAPAK-WELL
+cd src
+python3 app.py
