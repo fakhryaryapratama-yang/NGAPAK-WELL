@@ -47,7 +47,7 @@ pip3 install reportlab
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/USERNAME/NAMA-REPO.git
+git clone https://github.com/fakhryaryapratama-yang/NGAPAK-WELL.git
 cd NGAPAK-WELL
 cd src
 python3 app.py
