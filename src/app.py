@@ -57,7 +57,6 @@ def init_db():
     cur.execute("CREATE INDEX IF NOT EXISTS idx_tanggal ON kas(tanggal)")
     cur.execute("CREATE INDEX IF NOT EXISTS idx_jenis ON kas(jenis)")
 
-
     conn.commit()
     conn.close()
 
@@ -73,6 +72,28 @@ def get_petugas():
 
 def format_rupiah(angka):
     return f"Rp {angka:,}".replace(",", ".")
+
+
+# ===============================
+# TAMBAHAN FORMAT HARI (TIDAK MENGUBAH LOGIKA)
+# ===============================
+def format_tanggal_dengan_hari(tanggal_str):
+    dt = datetime.strptime(tanggal_str, "%Y-%m-%d %H:%M:%S")
+    
+    nama_hari = {
+        "Monday": "Senin",
+        "Tuesday": "Selasa",
+        "Wednesday": "Rabu",
+        "Thursday": "Kamis",
+        "Friday": "Jumat",
+        "Saturday": "Sabtu",
+        "Sunday": "Minggu"
+    }
+
+    hari_en = dt.strftime("%A")
+    hari_id = nama_hari.get(hari_en, hari_en)
+
+    return f"{hari_id}, {dt.strftime('%d-%m-%Y %H:%M:%S')}"
 
 
 # ===============================
@@ -132,8 +153,9 @@ def laporan():
         return
 
     for t in rows:
+        tanggal_format = format_tanggal_dengan_hari(t[0])
         print(
-            f"{t[0]} | "
+            f"{tanggal_format} | "
             f"{t[1].upper():6} | "
             f"{format_rupiah(t[2]):>15} | "
             f"{t[3]} | {t[4]}"
@@ -177,7 +199,8 @@ def export_pdf():
             c.showPage()
             y = height - 50
 
-        teks = f"{t[0]} | {t[1]} | {format_rupiah(t[2])} | {t[3]} | {t[4]}"
+        tanggal_format = format_tanggal_dengan_hari(t[0])
+        teks = f"{tanggal_format} | {t[1]} | {format_rupiah(t[2])} | {t[3]} | {t[4]}"
         c.drawString(50, y, teks[:110])
         y -= 15
         
